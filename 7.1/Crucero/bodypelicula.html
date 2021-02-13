@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css?_cacheOverride=1574773860125" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Varela+Round&display=swap">
+  	<link rel="stylesheet" href="./css/styles.css">
+    <title>Crucero</title>
+  </head>
+  <body>
+
+
+<h1>Cruceros Mallorca</h1>
+<div class="container">
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="img/L_204410_l-200028-l-181325-l-151506-costa-deliziosa.jpg" class="card-img" alt="..." style="height:450px">
+      </div>
+      <div class="col-md-8">
+
+        <table class="table table-striped">
+         
+          <tbody id="taula-empleats">
+     
+          </tbody>
+        </table>
+    <script type="text/javascript">
+    let Menu = [
+      ["Nombre del crucero", "Going Merry"],
+      ["Puerto de salida", "Puerto de Palma"],
+      ["Descripción", "Viaje por el Mediterranio"],
+      ["Fecha de inicio", "16/02/21"],
+      ["Fecha final", "20/02/21"],
+      ["Precio por persona", "219€"],
+      ["Ciudades por donde pasa el crucero", "Palma de Mallorca, Italia, Francia"],
+    ];
+     
+    for(let Dia of Menu){
+    let fila = `
+      <tr>
+        <th scope="row">${Dia[0]}</th>
+        <td>${Dia[1]}</td>
+       
+      </tr>
+      `;
+      document.getElementById("taula-empleats").innerHTML+=fila;
+     
+    }
+     
+    </script>
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- <div class="card-body">
+          <h5 id="film-title" class="card-title"></h5>
+          <div class="card-text">
+
+            <dl class="row">
+              <dt class="col-sm-3">Sinopsis</dt>
+              <dd id="film-synopsi" class="col-sm-9"></dd>
+
+              <dt class="col-sm-3">Gènere</dt>
+              <dd id="film-genre" class="col-sm-9">
+                Dibuixos
+              </dd>
+
+              <dt class="col-sm-3">Estrena</dt>
+              <dd id="film-premiere" class="col-sm-9">Sí</dd>
+
+              <dt class="col-sm-3 text-truncate">Edat recomanada:</dt>
+              <dd id="film-age" class="col-sm-9"><img src="img/age-tp.png" style="width:20px"/></dd>
+
+              <dt class="col-sm-3 text-truncate">Horari</dt>
+              <dd id="film-sessions" class="col-sm-9">
+
+              </dd>
+            </dl>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript">
+//atributo: valor
+var pelicula = {
+  "titol":"Eternal",
+  "sinopsi":"Un anciano extremadamente rico, quien está a punto de morir de cáncer, se somete a un procedimiento médico radical que transfiere su conciencia al cuerpo de un joven saludable.",
+  "genere":"thriller futurista",
+  "edat":16,
+  "estrena":"17/6/2015",
+  "sessions":["17:00","19:00","21:00","23.00"]
+}
+
+  document.getElementById("film-title").innerHTML= pelicula.titol;
+  document.getElementById("film-synopsi").innerHTML= pelicula.sinopsi;
+  document.getElementById("film-genre").innerHTML= pelicula.genere;
+  document.getElementById("film-age").innerHTML= pelicula.edat;
+ 
+  document.getElementById("film-premiere").innerHTML= pelicula.estrena;
+
+  var contenidorSessions = document.getElementById("film-sessions");
+
+  for (let hora of pelicula.sessions) {
+    contenidorSessions.innerHTML+=`<span class="badge badge-info">${hora}</span> `;
+  }
+
+
+</script>
+</body>
+</html>
